@@ -18,4 +18,4 @@ Create symlinks for the things you want started in multi-user level:
 
  ln -s /lib/systemd/system/rsyslog.service ''example''
 
-
+blarg
