@@ -10,9 +10,12 @@ Symlink /etc/systemd/system/default.target to whatever you want to be the primar
 
 Create symlinks for the things you want started in multi-user level:
 
-<code>
  mkdir /etc/systemd/multi-user.target.wants
+
  cd /etc/systemd/multi-user.target.wants
+
  ln -s /lib/systemd/system/remote-fs.target
+
  ln -s /lib/systemd/system/rsyslog.service ''example''
-</code>
+
+
