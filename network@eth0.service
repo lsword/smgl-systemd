@@ -1,3 +1,6 @@
+# This file should be placed in a /etc/systemd/system/network.target.requires directory
+# TODO: there's probably a way to handle this in the Install section
+
 [Unit]
 Description=%I network script
 Before=network.target
