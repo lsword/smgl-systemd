@@ -1,0 +1,13 @@
+[Unit]
+Description=portmap service
+BindTo=network.target
+After=syslog.target network.target
+Before=remote-fs-pre.target
+
+[Install]
+Alias=remote-fs-pre.target.requires/portmap.service
+
+[Service]
+Type=simple
+ExecStart=/sbin/portmap -f
+

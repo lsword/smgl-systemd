@@ -1,0 +1,11 @@
+[Unit]
+Description=%I network script
+Before=network.target
+After=syslog.target
+Wants=network.target
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/sbin/ifup %i
+ExecStop=/sbin/ifdown %i

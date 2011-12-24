@@ -1,0 +1,15 @@
+[Unit]
+Description=nfs client locking
+BindTo=network.target
+After=syslog.target network.target
+Requires=portmap.service
+After=portmap.service
+Before=remote-fs-pre.target
+
+[Install]
+Alias=remote-fs-pre.target.requires/nfslock.service
+
+[Service]
+Type=simple
+ExecStart=/usr/sbin/rpc.statd -F
+
