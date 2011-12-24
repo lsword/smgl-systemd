@@ -15,4 +15,4 @@ Create symlinks for the things you want started in multi-user level:
  ln -s /lib/systemd/system/remote-fs.target
  ln -s /lib/systemd/system/rsyslog.service ''example''
 
-
+%there4;
