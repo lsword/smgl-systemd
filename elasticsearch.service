@@ -15,6 +15,7 @@ WantedBy=multi-user.target
 # the memory, eg. by using `ulimit -l unlimited`.
 
 [Service]
+EnvironmentFile=/etc/sysconfig/elasticsearch
 Environment=JAVA_HOME=/opt/jre7 PATH=/usr/bin:/bin:/usr/local/bin:/opt/jre7/bin
 User=elasticsearch
 Group=elasticsearch
