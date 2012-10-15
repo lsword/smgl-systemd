@@ -6,7 +6,17 @@ After=syslog.target
 [Install]
 WantedBy=multi-user.target
 
+#TODO: add an /etc/sysconfig with environment variables:
+# Make sure that the ES_MIN_MEM and ES_MAX_MEM environment variables are set
+# to the same value, and that the machine has enough memory to allocate
+# for ElasticSearch, leaving enough memory for the operating system itself.
+#
+# You should also make sure that the ElasticSearch process is allowed to lock
+# the memory, eg. by using `ulimit -l unlimited`.
+
 [Service]
+User=elasticsearch
+Group=elasticsearch
 Type=forking
 ExecStart=/usr/local/bin/elasticsearch_ctl start
 ExecStop=/usr/local/bin/elasticsearch_ctl stop
