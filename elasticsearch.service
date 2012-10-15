@@ -1,0 +1,14 @@
+[Unit]
+Description=Elastic Search
+BindTo=network.target
+After=syslog.target
+
+[Install]
+WantedBy=multi-user.target
+
+[Service]
+Type=forking
+ExecStart=/usr/local/bin/elasticsearch_ctl start
+ExecStop=/usr/local/bin/elasticsearch_ctl stop
+#ExecReload=/usr/local/bin/elasticsearch_ctl restart
+
