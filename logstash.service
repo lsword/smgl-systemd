@@ -1,0 +1,14 @@
+[Unit]
+Description=Logstash
+BindTo=network.target
+Needs=elasticsearch.service
+
+[Install]
+WantedBy=multi-user.target
+
+[Service]
+User=logstash
+Group=logstash
+Type=simple
+ExecStart=/opt/logstash/run_logstash.sh
+
