@@ -7,8 +7,10 @@ Needs=nagios-php-fcgi.service perl-fcgi.service
 WantedBy=multi-user.target
 
 [Service]
-User=www-data
-Group=www-data
-Type=simple
+Type=forking
+PIDFile=/var/run/nginx.pid
 ExecStart=/usr/sbin/nginx
+ExecStop=/usr/sbin/nginx -s stop
+ExecReload=/usr/sbin/nginx -s reload
+Restart=on-failure
 
