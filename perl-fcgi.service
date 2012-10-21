@@ -1,0 +1,13 @@
+[Unit]
+Description=Perl FastCGI service
+BindTo=network.target
+
+[Install]
+WantedBy=multi-user.target
+
+[Service]
+User=www-data
+Group=www-data
+Type=simple
+ExecStart=/usr/local/bin/fastcgi-wrapper.pl
+
