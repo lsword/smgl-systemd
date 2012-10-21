@@ -9,5 +9,5 @@ WantedBy=multi-user.target
 User=nagios
 Group=nagios
 Type=simple
-ExecStart=/usr/bin/nagios
+ExecStart=/usr/bin/nagios /etc/nagios/nagios.cfg
 
