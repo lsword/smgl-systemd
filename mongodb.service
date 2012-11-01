@@ -6,6 +6,8 @@ BindTo=network.target
 WantedBy=multi-user.target
 
 [Service]
+User=mongo
+Group=mongo
 Type=forking
 PIDFile=/var/run/mongod.pid
 ExecStart=/usr/bin/mongod --fork --cpu --pidfilepath /var/run/mongod.pid
