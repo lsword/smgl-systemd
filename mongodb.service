@@ -8,9 +8,9 @@ WantedBy=multi-user.target
 [Service]
 User=mongo
 Group=mongo
-Type=forking
+Type=simple
 PIDFile=/var/run/mongod.pid
-ExecStart=/usr/bin/mongod --fork --cpu --pidfilepath /var/run/mongod.pid
+ExecStart=/usr/bin/mongod --cpu --pidfilepath /var/run/mongod.pid
 ExecStop=/usr/bin/mongod --shutdown
 Restart=on-failure
 
