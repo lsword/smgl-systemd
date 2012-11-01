@@ -1,0 +1,14 @@
+[Unit]
+Description=Graylog2 Server
+BindTo=network.target
+Needs=elasticsearch.service mongodb.service
+
+[Install]
+WantedBy=multi-user.target
+
+[Service]
+User=graylog2
+Group=graylog2
+Type=simple
+ExecStart=/opt/graylog2-server/run_graylog2.sh
+
