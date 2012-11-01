@@ -1,7 +1,7 @@
 [Unit]
 Description=Graylog2 Server
 BindTo=network.target
-Needs=elasticsearch.service mongodb.service
+Requires=elasticsearch.service mongodb.service
 
 [Install]
 WantedBy=multi-user.target
