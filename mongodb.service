@@ -1,0 +1,14 @@
+[Unit]
+Description=Mongodb
+BindTo=network.target
+
+[Install]
+WantedBy=multi-user.target
+
+[Service]
+Type=forking
+PIDFile=/var/run/mongod.pid
+ExecStart=/usr/bin/mongod --fork --cpu --pidfilepath /var/run/mongod.pid
+ExecStop=/usr/bin/mongod --shutdown
+Restart=on-failure
+
