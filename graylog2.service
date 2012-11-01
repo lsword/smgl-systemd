@@ -7,8 +7,8 @@ Requires=elasticsearch.service mongodb.service
 WantedBy=multi-user.target
 
 [Service]
-User=graylog2
-Group=graylog2
+#User=graylog2
+#Group=graylog2
 Type=simple
 ExecStart=/opt/graylog2-server/run_graylog2.sh
 
